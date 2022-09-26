@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/img.cart"
+            android:layout_width="150dp"
+            android:layout_height="170dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
+            <TextView
+                android:id="@+id/name.cart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tên sản phẩm"
+                android:textSize="22dp"
+                android:textColor="@color/black" />
+            <TextView
+                android:layout_marginTop="40dp"
+                android:id="@+id/price.cart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="gia tien"
+                android:textSize="18dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/backgrouddetail">
+                    <ImageButton
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="2dp"
+                        android:background="@drawable/round_button"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:textColor="@color/white"
+                        app:srcCompat="@drawable/ic_baseline_remove_black24" />
+                    <TextView
+                        android:layout_marginTop="7dp"
+                        android:id="@+id/quantity.detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:text="0"
+                        android:textSize="22dp"
+                        android:textStyle="bold"/>
+                    <ImageButton
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="2dp"
+                        android:background="@drawable/round_button"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:textColor="#C0C0C0"
+                        app:srcCompat="@drawable/ic_baseline_add_black24" />
+
+                </LinearLayout>
+                <ImageButton
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="27dp"
+                    android:layout_marginLeft="48dp"
+
+                    android:background="@drawable/round_button"
+
+                    android:textColor="#C0C0C0"
+                    app:srcCompat="@drawable/ic_baseline_more_horiz_24" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>
