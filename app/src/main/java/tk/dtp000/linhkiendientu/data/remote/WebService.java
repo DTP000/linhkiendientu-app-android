@@ -10,19 +10,19 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 public interface WebService {
-    @GET("categories/")
+    @GET("categories")
     Call<List<Category>> categoryList();
 
-    @GET("categories/show.php")
+    @GET("category")
     Call<Category> category(@Query("id") int id);
 
-    @GET("products/")
+    @GET("products")
     Call<List<Product>> productList();
 
-    @GET("products/show.php")
+    @GET("product")
     Call<Product> product(@Query("id") int id);
 
-    @GET("products/hot.php")
+    @GET("products/hot")
     Call<List<Product>> hotProducts();
 
     /**
@@ -30,6 +30,6 @@ public interface WebService {
      * @param categoryId
      * @return
      */
-    @GET("products/filter.php")
+    @GET("products/filter")
     Call<List<Product>> productListByCategory(@Query("categoryId") int categoryId);
 }

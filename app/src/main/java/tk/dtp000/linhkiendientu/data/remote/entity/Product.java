@@ -18,7 +18,7 @@ public class Product {
     @SerializedName("image")
     public String image;
 
-    @SerializedName("categories_id")
+    @SerializedName("category_id")
     public int categoryId;
 
 }
