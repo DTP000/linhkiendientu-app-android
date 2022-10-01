@@ -15,6 +15,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     ViewFlipper viewFlipper;
+//    RecyclerView
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,4 +52,7 @@ public class MainActivity extends AppCompatActivity {
     private void getViewId() {
         viewFlipper = findViewById(R.id.viewFlipper);
     }
+    
+    
+
 }
