@@ -7,5 +7,5 @@ public class Constants {
 
     public static final String CATEGORY_ID = "category_id";
     public static final String PRODUCT_ID = "product_id";
-    public static final String BASE_URL = "http://dtp000.ddns.net/LaravelAPI/public/api/";
+    public static final String BASE_URL = "http://dtp000.ddns.net/api/";
 }
