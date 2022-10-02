@@ -1,5 +1,6 @@
 package tk.dtp000.linhkiendientu.data.remote;
 
+import retrofit2.http.Path;
 import tk.dtp000.linhkiendientu.data.remote.entity.Category;
 import tk.dtp000.linhkiendientu.data.remote.entity.Product;
 
@@ -13,14 +14,14 @@ public interface WebService {
     @GET("categories")
     Call<List<Category>> categoryList();
 
-    @GET("category")
-    Call<Category> category(@Query("id") int id);
+    @GET("category/{id}")
+    Call<Category> category(@Path("id") int id);
 
     @GET("products")
     Call<List<Product>> productList();
 
-    @GET("product")
-    Call<Product> product(@Query("id") int id);
+    @GET("product/{id}")
+    Call<Product> product(@Path("id") int id);
 
     @GET("products/hot")
     Call<List<Product>> hotProducts();

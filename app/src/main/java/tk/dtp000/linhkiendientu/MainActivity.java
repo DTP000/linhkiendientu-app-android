@@ -3,8 +3,14 @@ package tk.dtp000.linhkiendientu;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import tk.dtp000.linhkiendientu.data.remote.RetrofitContrller;
+import tk.dtp000.linhkiendientu.data.remote.entity.Product;
 import tk.dtp000.linhkiendientu.ui.fragment.FavouriteFragment;
 import tk.dtp000.linhkiendientu.ui.fragment.HomeFragment;
 import tk.dtp000.linhkiendientu.ui.fragment.NotificationFragment;
@@ -13,6 +19,8 @@ import tk.dtp000.linhkiendientu.ui.fragment.UserFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
+import java.util.List;
+
 public class MainActivity extends BaseActivity {
     BottomNavigationView bottomNavigationView;
     Fragment fragment = new HomeFragment();
@@ -20,10 +28,27 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        testAPI();
         setContentView(R.layout.activity_main);
         initGUI();
     }
 
+    private void testAPI(){
+        Call<List<Product>> call = RetrofitContrller.service().productListByCategory(9);
+        call.enqueue(new Callback<List<Product>>() {
+            @Override
+            public void onResponse(Call<List<Product>> call, Response<List<Product>> response) {
+                Log.i("testAPI", response.toString());
+                Log.i("testAPI", String.valueOf(response.body()));
+//                mView.setProductListToView(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<List<Product>> call, Throwable t) {
+                Log.i("testAPI", t.getMessage());
+            }
+        });
+    }
     private void initGUI(){
         bottomNavigationView  = findViewById(R.id.bottom_navigation);
         getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
