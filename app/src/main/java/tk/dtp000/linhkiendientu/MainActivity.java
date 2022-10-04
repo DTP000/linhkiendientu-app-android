@@ -1,29 +1,61 @@
 package tk.dtp000.linhkiendientu;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
 import com.bumptech.glide.Glide;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     ViewFlipper viewFlipper;
-//    RecyclerView
+    BottomNavigationView bottomNavigationView;
+    Fragment fragment = new HomeFragment();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getViewId();
+        initGUI();
         Slider();
 
     }
+
+    private void initGUI() {
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.home:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container, new HomeFragment()).commit();
+                        return true;
+//                    case R.id.order:
+//                        getSupportFragmentManager().beginTransaction().replace(R.id.container, new OrderFragment()).commit();
+//                        return true;
+//                    case R.id.favourite:
+//                        getSupportFragmentManager().beginTransaction().replace(R.id.container, new FavouriteFragment()).commit();
+//                        return true;
+//                    case R.id.user:
+//                        getSupportFragmentManager().beginTransaction().replace(R.id.container, new UserFragment()).commit();
+//                        return true;
+                }
+                return false;
+            }
+        });
+    };
+
 
     private void Slider() {
         List<String> slider = new ArrayList<>();
@@ -51,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void getViewId() {
         viewFlipper = findViewById(R.id.viewFlipper);
+        bottomNavigationView  = findViewById(R.id.bottom_navigation);
     }
     
     
