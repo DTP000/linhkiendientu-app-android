@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Linh Kiện Điện Tử</string>
+    <string name="slide_1">https://bizweb.dktcdn.net/100/184/656/themes/821115/assets/slider_1.jpg?1664364064359</string>
+    <string name="slide_2">https://bizweb.dktcdn.net/100/184/656/themes/821115/assets/slider_2.jpg?1664364064359</string>
+    <string name="slide_3">https://bizweb.dktcdn.net/100/184/656/themes/821115/assets/slider_3.jpg?1664364064359</string>
+    <string name="price_sale"><strike>100.000 đ</strike></string>
 </resources>
