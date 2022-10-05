@@ -9,5 +9,6 @@ public abstract class DatabaseDao {
         return instance;
     }
     public abstract FavouriteDao getProductDao();
+    public abstract OrderDetailDao getOrderDetailDao();
 
 }

@@ -24,15 +24,15 @@
             android:textColor="#C0C0C0"
             app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
 
-            <ImageButton
-                android:id="@+id/ib.btn.favourite"
-                android:layout_marginTop="15dp"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:background="@drawable/round_button"
-                android:layout_marginLeft="305dp"
-                android:textColor="#C0C0C0"
-                app:srcCompat="@drawable/ic_baseline_favorite_white_24" />
+        <ImageButton
+            android:id="@+id/ib.btn.favourite"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="305dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/round_button"
+            android:textColor="#C0C0C0"
+            app:srcCompat="@drawable/ic_baseline_favorite_white_24" />
 
     </RelativeLayout>
 
@@ -44,7 +44,7 @@
             android:id="@+id/tv.product.name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Rau tươi"
+            android:text="{product_name}"
             android:textColor="@color/black"
             android:textSize="30dp"
             android:layout_marginLeft="18dp"
@@ -135,12 +135,14 @@
             android:layout_marginTop="15dp"
             android:background="@drawable/addcart">
             <TextView
+                android:id="@+id/tv_add_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Thêm vào giỏ hàng"
                 android:padding="10dp"
                 android:textSize="20dp"
                 android:textStyle="bold"
+                android:clickable="true"
                 android:textColor="@color/fifth"
                 android:gravity="center_vertical|center_horizontal"/>
         </LinearLayout>
