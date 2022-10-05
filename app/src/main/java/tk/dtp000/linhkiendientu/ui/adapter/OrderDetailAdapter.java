@@ -13,18 +13,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import tk.dtp000.linhkiendientu.ProductDetailActivity;
 import tk.dtp000.linhkiendientu.R;
-import tk.dtp000.linhkiendientu.data.dao.model.Favourite;
+import tk.dtp000.linhkiendientu.data.dao.model.OrderDetail;
 import tk.dtp000.linhkiendientu.utils.Constants;
 import tk.dtp000.linhkiendientu.utils.StringHelper;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.ViewHolder> {
-    private List<Favourite> productList;
+public class OrderDetailAdapter extends RecyclerView.Adapter<OrderDetailAdapter.ViewHolder> {
+    private List<OrderDetail> productList;
     private Context mContext;
 
-    public FavouriteAdapter(Context context, List<Favourite> productList){
+    public OrderDetailAdapter(Context context, List<OrderDetail> productList){
         mContext = context;
         this.productList = productList;
     }
@@ -33,7 +33,7 @@ public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.View
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_product, parent, false);
+                .inflate(R.layout.item_order_detail, parent, false);
 
         return new ViewHolder(view);
     }
@@ -42,10 +42,11 @@ public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Favourite product = productList.get(position);
-        Picasso.get().load(product.image).into(holder.imgFavourite);
-        holder.tvFavouriteName.setText(product.name);
+        OrderDetail product = productList.get(position);
+        Picasso.get().load(product.image).into(holder.imgOrderDetail);
+        holder.tvOrderDetailName.setText(product.name);
         holder.tvPrice.setText(StringHelper.currencyFormat(product.price));
+        holder.tvQuantity.setText(product.quantity + "");
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,15 +64,17 @@ public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.View
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        public ImageView imgFavourite;
-        private TextView tvFavouriteName;
+        public ImageView imgOrderDetail;
+        private TextView tvOrderDetailName;
         private TextView tvPrice;
+        private TextView tvQuantity;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            imgFavourite = itemView.findViewById(R.id.imgProduct);
-            tvFavouriteName = itemView.findViewById(R.id.tv_product_name);
-            tvPrice = itemView.findViewById(R.id.tv_price);
+            imgOrderDetail = itemView.findViewById(R.id.imgProduct);
+            tvOrderDetailName = itemView.findViewById(R.id.tv_product_name);
+            tvPrice = itemView.findViewById(R.id.tv_price2);
+            tvQuantity = itemView.findViewById(R.id.tv_quantity);
         }
     }
 }

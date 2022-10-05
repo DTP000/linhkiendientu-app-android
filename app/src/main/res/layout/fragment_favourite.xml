@@ -10,6 +10,6 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rc.favourite"
         android:layout_width="match_parent"
-        android:layout_height="320dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"/>
 </LinearLayout>
