@@ -2,9 +2,13 @@ package tk.dtp000.linhkiendientu;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
 
 import tk.dtp000.linhkiendientu.data.dao.DatabaseDao;
 import tk.dtp000.linhkiendientu.data.dao.model.Favourite;
@@ -15,14 +19,17 @@ import tk.dtp000.linhkiendientu.utils.Constants;
 import tk.dtp000.linhkiendientu.utils.StringHelper;
 import com.squareup.picasso.Picasso;
 
+import org.greenrobot.eventbus.EventBus;
+
 public class ProductDetailActivity extends BaseActivity implements ProductDetailConstract.IView {
     private ProductDetailConstract.IPresenter mPresenter;
 
     private ImageView imgProduct;
     private TextView tvName;
-    private TextView tvPrice, quantity_detail;
+    private TextView tvPrice;
+    private Spinner spinner_soluong;
     private ImageButton ibBtnBack;
-    private ImageButton ibBtnFavourite, btn_add, btn_sub;
+    private ImageButton ibBtnFavourite;
     private Product mProduct;
 
     @Override
@@ -39,9 +46,8 @@ public class ProductDetailActivity extends BaseActivity implements ProductDetail
         tvPrice = findViewById(R.id.tv_product_price);
         ibBtnBack = findViewById(R.id.ib_btn_back);
         ibBtnFavourite = findViewById(R.id.ib_btn_favourite);
-        quantity_detail = findViewById(R.id.quantity_detail);
-        btn_add = findViewById(R.id.btn_add_quality);
-        btn_sub = findViewById(R.id.btn_sub_quality);
+        spinner_soluong = findViewById(R.id.spinner_soluong);
+
     }
 
     private void initData() {
@@ -54,17 +60,6 @@ public class ProductDetailActivity extends BaseActivity implements ProductDetail
             }
         });
 
-        btn_add.setOnClickListener(new View.OnClickListener() {
-            int temp = 0;
-            @Override
-            public void onClick(View view) {
-                int quanlity = Integer.parseInt((String) quantity_detail.getText());
-                if( quanlity < 50 ) {
-                    temp = quanlity+1;
-                    quantity_detail.setText(temp);
-                }
-             }
-        });
 
         ibBtnFavourite.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,6 +79,11 @@ public class ProductDetailActivity extends BaseActivity implements ProductDetail
         mPresenter = new ProductDetailPresenter();
         mPresenter.setView(this);
         mPresenter.getProduct(productId);
+
+        Integer[] soluong = new Integer[]{1,5,10,15,20,50,100};
+        ArrayAdapter<Integer> adapterSpin =
+                new ArrayAdapter<>(this,R.layout.spinner_item,soluong);
+        spinner_soluong.setAdapter(adapterSpin);
     }
 
     @Override
