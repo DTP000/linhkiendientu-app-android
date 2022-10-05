@@ -84,6 +84,7 @@
                     android:layout_marginStart="5dp"
                     android:lines="1"
                     android:ems= "6"
+                    android:ellipsize="end"
                     android:textColor="@color/black"
                     android:textSize="16dp" />
 

@@ -20,18 +20,15 @@ public class ProductDetailActivity extends BaseActivity implements ProductDetail
 
     private ImageView imgProduct;
     private TextView tvName;
-    private TextView tvPrice;
-
+    private TextView tvPrice, quantity_detail;
     private ImageButton ibBtnBack;
-    private ImageButton ibBtnFavourite;
-
+    private ImageButton ibBtnFavourite, btn_add, btn_sub;
     private Product mProduct;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_detail);
-
         initGUI();
         initData();
     }
@@ -40,8 +37,16 @@ public class ProductDetailActivity extends BaseActivity implements ProductDetail
         imgProduct = findViewById(R.id.img_detail);
         tvName = findViewById(R.id.tv_product_name);
         tvPrice = findViewById(R.id.tv_product_price);
-
         ibBtnBack = findViewById(R.id.ib_btn_back);
+        ibBtnFavourite = findViewById(R.id.ib_btn_favourite);
+        quantity_detail = findViewById(R.id.quantity_detail);
+        btn_add = findViewById(R.id.btn_add_quality);
+        btn_sub = findViewById(R.id.btn_sub_quality);
+    }
+
+    private void initData() {
+
+        int productId = getIntent().getIntExtra(Constants.PRODUCT_ID, 1);
         ibBtnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,7 +54,18 @@ public class ProductDetailActivity extends BaseActivity implements ProductDetail
             }
         });
 
-        ibBtnFavourite = findViewById(R.id.ib_btn_favourite);
+        btn_add.setOnClickListener(new View.OnClickListener() {
+            int temp = 0;
+            @Override
+            public void onClick(View view) {
+                int quanlity = Integer.parseInt((String) quantity_detail.getText());
+                if( quanlity < 50 ) {
+                    temp = quanlity+1;
+                    quantity_detail.setText(temp);
+                }
+             }
+        });
+
         ibBtnFavourite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,10 +80,6 @@ public class ProductDetailActivity extends BaseActivity implements ProductDetail
                 DatabaseDao.getInstance().getProductDao().insert(favourite);
             }
         });
-    }
-
-    private void initData() {
-        int productId = getIntent().getIntExtra(Constants.PRODUCT_ID, 1);
 
         mPresenter = new ProductDetailPresenter();
         mPresenter.setView(this);

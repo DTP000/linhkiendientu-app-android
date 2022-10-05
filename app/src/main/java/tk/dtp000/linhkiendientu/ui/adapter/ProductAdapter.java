@@ -46,7 +46,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         Picasso.get().load(product.image).into(holder.imgProduct);
         holder.tvProductName.setText(product.name);
         holder.tvPrice.setText(StringHelper.currencyFormat(product.price));
-
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
