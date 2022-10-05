@@ -7,77 +7,38 @@
     android:orientation="vertical">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        android:layout_height="wrap_content">
             <ImageView
                 android:id="@+id/img.detail"
                 android:layout_width="match_parent"
                 android:layout_height="300dp" />
-            <ImageButton
-                android:id="@+id/ib.btn.back"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="15dp"
-                android:layout_marginBottom="15dp"
-                android:background="@drawable/round_button"
-                android:gravity="center_vertical|center_horizontal"
-                android:textColor="#C0C0C0"
-                app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+
+        <ImageButton
+            android:id="@+id/ib.btn.back"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/round_button"
+            android:textColor="#C0C0C0"
+            app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
 
             <ImageButton
                 android:id="@+id/ib.btn.favourite"
+                android:layout_marginTop="15dp"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:layout_marginLeft="350dp"
-                android:layout_marginTop="240dp"
                 android:background="@drawable/round_button"
-                android:gravity="center_vertical|center_horizontal"
+                android:layout_marginLeft="305dp"
                 android:textColor="#C0C0C0"
                 app:srcCompat="@drawable/ic_baseline_favorite_white_24" />
 
-            <ImageButton
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:layout_marginLeft="350dp"
-                android:layout_marginTop="185dp"
-                android:background="@drawable/round_button"
-                android:gravity="center_vertical|center_horizontal"
-                android:textColor="#C0C0C0"
-                app:srcCompat="@drawable/ic_baseline_share_24" />
-        </RelativeLayout>
-
     </RelativeLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <ImageView
-            android:layout_margin="10dp"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:background="@drawable/round_button"
-            android:gravity="center_vertical|center_horizontal"
-            android:textColor="#C0C0C0"
-            android:src="@drawable/logo"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:textSize="15dp"
-            android:layout_marginTop="20dp"
-            android:layout_centerHorizontal="true"
-            android:textStyle="bold"
-            />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
         <TextView
             android:id="@+id/tv.product.name"
@@ -88,75 +49,84 @@
             android:textSize="30dp"
             android:layout_marginLeft="18dp"
             />
-        <TextView
-            android:id="@+id/tv.product.price"
-            android:layout_width="match_parent"
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:background="@color/colorPrimary"
             android:layout_height="wrap_content"
-            android:text="100.000 vnđ"
-            android:textSize="18dp"
+            app:cardCornerRadius="10dp"
             android:layout_marginLeft="18dp"
-            android:layout_marginTop="10dp"
-            />
+            android:layout_marginTop="10dp">
+            <TextView
+                android:id="@+id/tv.product.price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:background="@color/colorPrimary"
+                android:textColor="#EFECEC"
+                android:text="100.000 vnđ"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                />
+        </androidx.cardview.widget.CardView>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="127dp"
+            android:layout_above="@+id/linear_mua"
+            android:layout_below="@+id/linear_thongtin"
+            android:layout_marginStart="@dimen/margin_1"
+            android:layout_marginTop="@dimen/margin_1"
+            android:layout_marginEnd="@dimen/margin_1"
+            android:background="#90C7F3"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp">
+
+            <TextView
+                android:id="@+id/mota_chitiet"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="5dp"
+                android:text="@string/mo_ta_san_pham"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+        </ScrollView>
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="10dp"
-            android:background="@drawable/backgrouddetail">
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="horizontal">
+
             <TextView
-                android:layout_weight="2"
+                android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Quantity"
+                android:layout_weight="1"
                 android:padding="10dp"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:textColor="@color/black"/>
+                android:text="Số Lượng "
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:layout_marginRight="10dp"
-                android:orientation="horizontal">
-                <ImageButton
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="3dp"
-                    android:background="@drawable/round_button"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:textColor="@color/white"
-                    app:srcCompat="@drawable/ic_baseline_remove_24"
-                    />
-                <TextView
-                    android:layout_marginTop="7dp"
-                    android:id="@+id/quantity.detail"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:text="0"
-                    android:textSize="22dp"
-                    android:textStyle="bold"
-                    />
-                <ImageButton
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="3dp"
-                    android:background="@drawable/round_button"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:textColor="#C0C0C0"
-                    app:srcCompat="@drawable/ic_baseline_add_24" />
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/margin_1_2"
+                android:background="@drawable/custom_spinner"
+                android:padding="5dp">
+
+                <Spinner
+                    android:id="@+id/spinner_soluong"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="#90C7F3" />
             </LinearLayout>
         </LinearLayout>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Sản phầm uy tín chất lượng"
-            android:gravity="center"
-            android:layout_margin="10dp"
-            android:textSize="16dp"
-            android:textStyle="bold"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -171,25 +141,7 @@
                 android:padding="10dp"
                 android:textSize="20dp"
                 android:textStyle="bold"
-                android:textColor="@color/white"
-                android:gravity="center_vertical|center_horizontal"/>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/addcart">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Mua ngay"
-                android:padding="10dp"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:textColor="@color/white"
+                android:textColor="@color/fifth"
                 android:gravity="center_vertical|center_horizontal"/>
         </LinearLayout>
     </LinearLayout>

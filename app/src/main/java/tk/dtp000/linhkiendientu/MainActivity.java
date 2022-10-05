@@ -5,6 +5,10 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+import android.widget.ViewFlipper;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -16,21 +20,26 @@ import tk.dtp000.linhkiendientu.ui.fragment.HomeFragment;
 import tk.dtp000.linhkiendientu.ui.fragment.NotificationFragment;
 import tk.dtp000.linhkiendientu.ui.fragment.OrderFragment;
 import tk.dtp000.linhkiendientu.ui.fragment.UserFragment;
+
+import com.bumptech.glide.Glide;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends BaseActivity {
+
     BottomNavigationView bottomNavigationView;
     Fragment fragment = new HomeFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        testAPI();
         setContentView(R.layout.activity_main);
+        testAPI();
         initGUI();
+
     }
 
     private void testAPI(){
@@ -49,6 +58,7 @@ public class MainActivity extends BaseActivity {
             }
         });
     }
+
     private void initGUI(){
         bottomNavigationView  = findViewById(R.id.bottom_navigation);
         getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
