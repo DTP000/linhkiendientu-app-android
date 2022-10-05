@@ -46,15 +46,15 @@
             android:layout_height="wrap_content"
             android:text="{product_name}"
             android:textColor="@color/black"
-            android:textSize="30dp"
-            android:layout_marginLeft="18dp"
+            android:textSize="25dp"
+            android:layout_marginLeft="10dp"
             />
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:background="@color/colorPrimary"
             android:layout_height="wrap_content"
             app:cardCornerRadius="10dp"
-            android:layout_marginLeft="18dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp">
             <TextView
                 android:id="@+id/tv.product.price"

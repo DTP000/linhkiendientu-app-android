@@ -7,89 +7,72 @@
     android:orientation="vertical"
     tools:context=".CartActivity">
 
-    <LinearLayout
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarGiohang"
+        app:title="Giỏ Hàng"
+        app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
+        app:titleTextColor="@color/white"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleView_Giohang"
+        android:layout_width="match_parent"
+        android:layout_height="518dp"
+        android:layout_above="@+id/linear_thanhtoan"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="@dimen/margin_1_2"
+        android:layout_marginTop="@dimen/margin_1_2"
+        android:layout_marginEnd="@dimen/margin_1_2" />
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:orientation="horizontal">
-
+        android:layout_marginStart="10dp"
+        android:background="@drawable/border_rating"
+        android:backgroundTint="#7AA5EA">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Xoá tất cả"
-            android:textStyle="bold"
-            android:textSize="18dp"
-            android:textColor="@color/red"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginRight="48dp"
-            android:textSize="22dp"
-            android:text="Giỏ hàng"
+            android:layout_marginStart="10dp"
+            android:text="Tổng Cộng: "
+            android:textSize="30sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:textColor="@color/black"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_marginEnd="10dp"/>
 
-        <ImageView
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
-            app:srcCompat="@drawable/ic_baseline_close_24"
-
-            />
-    </LinearLayout>
-    <!--        dòng ngang màu xám-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:paddingTop="1dp"
-        android:background="@color/gray"
-        android:layout_marginBottom="5dp"
-        >
-    </LinearLayout>
-    <!--    sản phẩm-->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"/>
-
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="10dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:text="3,000,000 đ"
+            android:textSize="30dp"/>
+    </FrameLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_margin="10dp"
-
+        android:layout_marginTop="15dp"
         android:background="@drawable/addcart">
         <TextView
-
-            android:layout_marginLeft="10dp"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Thêm vào giỏ hàng"
+            android:text="Thanh Toán Giỏ Hàng"
             android:padding="10dp"
             android:textSize="20dp"
             android:textStyle="bold"
-            android:textColor="@color/white"
-            />
-        <TextView
-            android:layout_marginLeft="40dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="100.000 vnd"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:textColor="@color/white"/>
-
+            android:textColor="@color/fifth"
+            android:gravity="center_vertical|center_horizontal"/>
     </LinearLayout>
-
-
-
-
 </LinearLayout>

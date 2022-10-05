@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -65,12 +66,16 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         public ImageView imgProduct;
         private TextView tvProductName;
         private TextView tvPrice;
+        private CheckBox cbRating;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imgProduct = itemView.findViewById(R.id.imgProduct);
             tvProductName = itemView.findViewById(R.id.tv_product_name1);
             tvPrice = itemView.findViewById(R.id.tv_price);
+            cbRating = itemView.findViewById(R.id.checkBox2);
+            double ranNum = Math.round((((Math.random()) * ((4 - 3.0) + 1)) + 3.0)*10.0)/10.0;
+            cbRating.setText(Double.toString(ranNum));
         }
     }
 }
