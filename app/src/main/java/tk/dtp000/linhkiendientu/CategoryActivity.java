@@ -1,5 +1,6 @@
 package tk.dtp000.linhkiendientu;
 
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -51,7 +52,8 @@ public class CategoryActivity extends BaseActivity implements CategoryConstract.
     @Override
     public void setProductListToView(List<Product> productList) {
         ProductAdapter adapter = new ProductAdapter(this, productList);
-        rcCategory.setLayoutManager(new LinearLayoutManager(this));
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this,2);
+        rcCategory.setLayoutManager(layoutManager);
         rcCategory.setAdapter(adapter);
         adapter.notifyDataSetChanged();
     }
@@ -59,6 +61,7 @@ public class CategoryActivity extends BaseActivity implements CategoryConstract.
     @Override
     public void setCategoryToView(Category category) {
         Picasso.get().load(category.image).into(ivCategoryImage);
+        ivCategoryImage.setScaleType(ImageView.ScaleType.FIT_XY);
         tvCategoryName.setText(category.name);
     }
 }
