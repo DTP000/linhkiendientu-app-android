@@ -27,6 +27,7 @@ public class ProductDetailActivity extends BaseActivity implements ProductDetail
     private ImageView imgProduct;
     private TextView tvName;
     private TextView tvPrice;
+    private TextView tvDesc;
     private Spinner spinner_soluong;
     private ImageButton ibBtnBack;
     private ImageButton ibBtnFavourite;
@@ -44,6 +45,7 @@ public class ProductDetailActivity extends BaseActivity implements ProductDetail
         imgProduct = findViewById(R.id.img_detail);
         tvName = findViewById(R.id.tv_product_name);
         tvPrice = findViewById(R.id.tv_product_price);
+        tvDesc = findViewById(R.id.mota_chitiet);
         ibBtnBack = findViewById(R.id.ib_btn_back);
         ibBtnFavourite = findViewById(R.id.ib_btn_favourite);
         spinner_soluong = findViewById(R.id.spinner_soluong);
@@ -92,5 +94,6 @@ public class ProductDetailActivity extends BaseActivity implements ProductDetail
         Picasso.get().load(product.image).into(imgProduct);
         tvName.setText(product.name);
         tvPrice.setText(StringHelper.currencyFormat(product.price));
+        tvDesc.setText(product.desc);
     }
 }
