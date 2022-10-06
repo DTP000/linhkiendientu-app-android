@@ -1,5 +1,7 @@
 package tk.dtp000.linhkiendientu.ui.constract;
 
+import android.util.Log;
+
 import tk.dtp000.linhkiendientu.data.dao.DatabaseDao;
 import tk.dtp000.linhkiendientu.data.dao.model.OrderDetail;
 

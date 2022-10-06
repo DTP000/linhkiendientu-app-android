@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -28,7 +29,6 @@ public class FavouriteFragment extends Fragment implements FavouriteFragmentCons
         View rootView = inflater.inflate(R.layout.fragment_favourite, container, false);
         initGUI(rootView);
         initData();
-
         return rootView;
     }
 
@@ -40,13 +40,14 @@ public class FavouriteFragment extends Fragment implements FavouriteFragmentCons
 
     private void initGUI(View rootView){
         rcFavourite = rootView.findViewById(R.id.rc_favourite);
-        rcFavourite.setLayoutManager(new LinearLayoutManager(getContext()));
+//        rcFavourite.setLayoutManager(new LinearLayoutManager(getContext()));
     }
 
     @Override
     public void setFavouriteListToView(List<Favourite> favouriteList) {
         FavouriteAdapter adapter = new FavouriteAdapter(getContext(), favouriteList);
-        rcFavourite.setLayoutManager(new LinearLayoutManager(getContext()));
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getContext(),2);
+        rcFavourite.setLayoutManager(layoutManager);
         rcFavourite.setAdapter(adapter);
     }
 }

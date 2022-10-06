@@ -6,10 +6,10 @@
         android:icon="@drawable/ic_baseline_home_24"/>
     <item android:id="@+id/order"
         android:title="Order"
-        android:icon="@drawable/ic_baseline_notifications_none_24"/>
+        android:icon="@drawable/ic_baseline_shopping_cart_24"/>
     <item android:id="@+id/favourite"
         android:title="Favourite"
-        android:icon="@drawable/ic_baseline_notifications_none_24"/>
+        android:icon="@drawable/ic_baseline_favorite_border_24"/>
     <item android:id="@+id/user"
         android:title="User"
         android:icon="@drawable/ic_baseline_settings_24"/>

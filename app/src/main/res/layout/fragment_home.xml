@@ -13,31 +13,65 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-
             android:orientation="vertical"
             android:background="#fff">
-            <LinearLayout
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_Home"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="5px"
-                android:orientation="horizontal">
+                android:layout_height="50dp"
+                android:background="@color/colorPrimary"
+                app:navigationIcon="@drawable/ic_baseline_home_24"
+                app:title="Trang Chủ"
+                app:titleTextColor="@color/white">
 
-                <SearchView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="9" />
+                <FrameLayout
+                    android:onClick="openCart"
+                    android:layout_width="70dp"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_gravity="end"
+                    android:layout_marginRight="@dimen/margin_1_2">
 
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="15dp"
-                    android:layout_height="30dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/img_bell" />
+                    <FrameLayout
 
-            </LinearLayout>
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:id="@+id/miniCart"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="10dp"
+                            android:src="@drawable/ic_cart" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top|left"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginBottom="22dp"
+                            android:background="@color/red"
+                            android:elevation="@dimen/margin_1"
+                            app:cardCornerRadius="100dp">
+
+                            <TextView
+                                android:id="@+id/thongbao_soluong"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/red"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp"
+                                android:text="0"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:visibility="visible" />
+                        </androidx.cardview.widget.CardView>
+                    </FrameLayout>
+                </FrameLayout>
+            </androidx.appcompat.widget.Toolbar>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="1px"
@@ -47,7 +81,7 @@
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="New Arrival"
+                android:text="Hàng Mới Về"
                 android:textSize="18dp"
                 android:fontFamily="monospace"
                 android:textStyle="bold"
@@ -99,7 +133,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="monospace"
-                        android:text="Exclusize deals"
+                        android:text="Sản Phẩm Khuyến Mãi"
                         android:textColor="#111"
                         android:textSize="18dp"
                         android:textStyle="bold" />
@@ -110,7 +144,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="monospace"
-                        android:text="View all"
+                        android:text="Xem Tất Cả"
 
                         android:textAlignment="textEnd" />
 
@@ -148,7 +182,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="monospace"
-                        android:text="Categories"
+                        android:text="Danh Mục"
                         android:textColor="#111"
                         android:textSize="18dp"
                         android:textStyle="bold" />
@@ -159,7 +193,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="monospace"
-                        android:text="View all"
+                        android:text="Xem Tất Cả"
 
                         android:textAlignment="textEnd" />
 
