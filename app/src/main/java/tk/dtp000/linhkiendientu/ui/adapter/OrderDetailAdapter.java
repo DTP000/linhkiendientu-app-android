@@ -47,7 +47,7 @@ public class OrderDetailAdapter extends RecyclerView.Adapter<OrderDetailAdapter.
 //        holder.imgOrderDetail.setScaleType(ImageView.ScaleType.FIT_XY);
         holder.tv_product_name1.setText(product.name);
         holder.tvPrice.setText(StringHelper.currencyFormat(product.price));
-        holder.tvQuanlity.setText(product.quantity);
+        holder.tvQuanlity.setText(product.quantity + "");
 
 //        holder.itemView.setOnClickListener(new View.OnClickListener() {
 //            @Override
