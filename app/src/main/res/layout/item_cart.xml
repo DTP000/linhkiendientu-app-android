@@ -42,13 +42,6 @@
                     android:text="gia tien"
                     android:textSize="18dp"
                     />
-                <TextView
-                    android:id="@+id/item.total.price"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:text="số lượng * giá"
-                    android:textSize="18sp"/>
             </FrameLayout>
 
             <FrameLayout
@@ -56,15 +49,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 >
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
+                    android:background="@drawable/backgrouddetail"
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
-                    android:background="@drawable/backgrouddetail">
                     <ImageButton
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="2dp"
                         android:background="@drawable/round_button"
@@ -72,28 +67,31 @@
                         android:gravity="center_vertical|center_horizontal"
                         android:textColor="@color/white"
                         app:srcCompat="@drawable/ic_baseline_remove_black24" />
+
                     <TextView
-                        android:layout_marginTop="7dp"
                         android:id="@+id/quantity.detail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
+
                         android:layout_marginRight="15dp"
                         android:text="0"
                         android:textSize="22dp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
+
                     <ImageButton
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_marginRight="5dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:layout_marginTop="2dp"
+                        android:layout_marginRight="5dp"
                         android:background="@drawable/round_button"
+                        android:backgroundTint="@color/colorPrimary"
                         android:gravity="center_vertical|center_horizontal"
                         android:textColor="#C0C0C0"
-                        android:backgroundTint="@color/colorPrimary"
                         app:srcCompat="@drawable/ic_baseline_add_black24" />
 
                 </LinearLayout>
+
                 <ImageButton
                     android:layout_width="40dp"
                     android:layout_height="40dp"

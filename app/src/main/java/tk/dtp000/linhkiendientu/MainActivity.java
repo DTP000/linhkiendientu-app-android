@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import retrofit2.Call;
@@ -91,5 +93,10 @@ public class MainActivity extends BaseActivity {
     public void openCart(View view) {
         Intent giohang = new Intent(getApplicationContext(),CartActivity.class);
         startActivity(giohang);
+    }
+
+    public void updatePriceUp(View view){
+        TextView tvQt = view.findViewById(R.id.quantity_detail);
+        Toast.makeText(getApplicationContext(), tvQt.getText(), Toast.LENGTH_SHORT).show();
     }
 }

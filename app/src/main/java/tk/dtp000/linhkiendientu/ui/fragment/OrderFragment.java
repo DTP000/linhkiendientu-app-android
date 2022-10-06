@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -37,6 +38,7 @@ public class OrderFragment extends Fragment implements OrderFragmentConstract.IV
     }
 
     private void initGUI(View rootVIew){
+
         rcOrderDetail = rootVIew.findViewById(R.id.recycleView_giohang);
     }
 
@@ -58,4 +60,5 @@ public class OrderFragment extends Fragment implements OrderFragmentConstract.IV
         rcOrderDetail.setAdapter(adapter);
 
     }
+
 }

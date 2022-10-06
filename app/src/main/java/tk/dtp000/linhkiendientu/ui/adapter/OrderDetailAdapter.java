@@ -75,7 +75,7 @@ public class OrderDetailAdapter extends RecyclerView.Adapter<OrderDetailAdapter.
             imgOrderDetail = itemView.findViewById(R.id.img_cart);
             tv_product_name1 = itemView.findViewById(R.id.name_cart);
             tvPrice = itemView.findViewById(R.id.price_cart);
-            tvTotalPrice = itemView.findViewById(R.id.item_total_price);
+//            tvTotalPrice = itemView.findViewById(R.id.item_total_price);
             tvQuanlity = itemView.findViewById(R.id.quantity_detail);
         }
     }

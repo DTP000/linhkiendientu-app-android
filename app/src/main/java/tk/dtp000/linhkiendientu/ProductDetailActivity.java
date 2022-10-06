@@ -8,6 +8,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
@@ -68,6 +69,7 @@ public class ProductDetailActivity extends BaseActivity implements ProductDetail
         ibBtnFavourite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "Đã thêm vào yêu thích", Toast.LENGTH_SHORT).show();
                 Log.i("testAAAA", "zo dc day roi");
                 Favourite favourite = new Favourite(
                         mProduct.id,
@@ -84,6 +86,7 @@ public class ProductDetailActivity extends BaseActivity implements ProductDetail
         tvAddCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Đã thêm vào giỏ hàng", Toast.LENGTH_SHORT).show();
                 Log.i("testAAAA", "zo dc them gio hang roi");
 //                int id, String name, String image, String description,
 //                int quantity, double price, int categoryId
