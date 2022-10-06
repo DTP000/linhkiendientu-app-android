@@ -111,7 +111,7 @@
                 android:insetTop="0dp"
                 android:textColor="@color/white"
                 android:insetBottom="0dp"
-                android:text="Add To Cart" />
+                android:text="Thêm Giỏ Hàng" />
         </LinearLayout>
 
     </LinearLayout>

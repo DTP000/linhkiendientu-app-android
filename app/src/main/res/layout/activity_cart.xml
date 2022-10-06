@@ -18,7 +18,7 @@
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycleView_Giohang"
+        android:id="@+id/recycleView_Giohang1"
         android:layout_width="match_parent"
         android:layout_height="518dp"
         android:layout_above="@+id/linear_thanhtoan"

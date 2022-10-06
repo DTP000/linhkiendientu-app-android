@@ -34,7 +34,6 @@ public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.View
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_product, parent, false);
-
         return new ViewHolder(view);
     }
 
@@ -43,6 +42,7 @@ public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.View
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Favourite product = productList.get(position);
+//        System.out.println(productList.size()+"haha");
         Picasso.get().load(product.image).into(holder.imgFavourite);
         holder.tvFavouriteName.setText(product.name);
         holder.tvPrice.setText(StringHelper.currencyFormat(product.price));
@@ -70,7 +70,7 @@ public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.View
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imgFavourite = itemView.findViewById(R.id.imgProduct);
-            tvFavouriteName = itemView.findViewById(R.id.tv_product_name);
+            tvFavouriteName = itemView.findViewById(R.id.tv_product_name1);
             tvPrice = itemView.findViewById(R.id.tv_price);
         }
     }

@@ -2,9 +2,11 @@ package tk.dtp000.linhkiendientu;
 
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -82,5 +84,12 @@ public class MainActivity extends BaseActivity {
                 return false;
             }
         });
+
+
+    }
+
+    public void openCart(View view) {
+        Intent giohang = new Intent(getApplicationContext(),CartActivity.class);
+        startActivity(giohang);
     }
 }
