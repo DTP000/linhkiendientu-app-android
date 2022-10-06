@@ -8,6 +8,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
@@ -68,6 +69,8 @@ public class ProductDetailActivity extends BaseActivity implements ProductDetail
         ibBtnFavourite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "Thêm Yêu Thích Thành Công",Toast.LENGTH_SHORT).show();
+
                 Log.i("testAAAA", "zo dc day roi");
                 Favourite favourite = new Favourite(
                         mProduct.id,
@@ -84,7 +87,8 @@ public class ProductDetailActivity extends BaseActivity implements ProductDetail
         tvAddCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("testAAAA", "zo dc them gio hang roi");
+                Toast.makeText(getApplicationContext(), "Thêm Vào Giỏ Hàng Thành Công",Toast.LENGTH_SHORT).show();
+                Log.i("testAAAA", "zo dc them gio hang roi => ");
 //                int id, String name, String image, String description,
 //                int quantity, double price, int categoryId
                 OrderDetail order_details = new OrderDetail(
@@ -96,7 +100,12 @@ public class ProductDetailActivity extends BaseActivity implements ProductDetail
                         mProduct.price,
                         mProduct.categoryId
                 );
-                DatabaseDao.getInstance().getOrderDetailDao().insert(order_details);
+                OrderDetail o = DatabaseDao.getInstance().getOrderDetailDao().find(mProduct.id);
+                if ( o == null){
+                    DatabaseDao.getInstance().getOrderDetailDao().insert(order_details);
+                } else {
+                    DatabaseDao.getInstance().getOrderDetailDao().update(order_details);
+                }
             }
         });
         mPresenter = new ProductDetailPresenter();
